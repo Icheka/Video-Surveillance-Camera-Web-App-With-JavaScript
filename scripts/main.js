@@ -7,7 +7,7 @@ const cameraRenderer = document.getElementById("camera_renderer");
 const shutterControl = document.getElementById("shutter-control");
 
 
-function cameraStart() {
+(function cameraStart() {
     navigator.mediaDevices
         .getUserMedia(conf)
         .then(stream => {
@@ -16,7 +16,7 @@ function cameraStart() {
 	    }).catch( err => {
 	        console.error("Error getting video stream :>> ", error);
     });
-}
+})();
 
 shutterControl.onclick = () => {
     cameraRenderer.style.width = videoWindow.style.width;
