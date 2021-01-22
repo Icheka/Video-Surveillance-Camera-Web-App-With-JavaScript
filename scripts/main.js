@@ -3,7 +3,7 @@ const conf = { video: { facingMode: "user" }, audio: false };
 
 const videoWindow = document.getElementById("video-window");
 const cameraImg = document.getElementById("camera_img");
-const cameraRenderer = document.getElementById("camera_renderer");
+const cameraRenderer = document.getElementById("camera-renderer");
 const shutterControl = document.getElementById("shutter-control");
 
 
