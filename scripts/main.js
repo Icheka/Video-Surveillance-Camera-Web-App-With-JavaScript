@@ -19,9 +19,9 @@ function cameraStart() {
 }
 
 shutterControl.onclick = function() {
-    cameraRenderer.width = cameraView.videoWidth;
-    cameraRenderer.height = cameraView.videoHeight;
-    cameraRenderer.getContext("2d").drawImage(cameraView, 0, 0);
+    cameraRenderer.width = videoWindow.videoWidth;
+    cameraRenderer.height = videoWindow.videoHeight;
+    cameraRenderer.getContext("2d").drawImage(cameraRenderer, 0, 0);
     cameraImg.src = cameraSensor.toDataURL("image/webp");
     cameraImg.classList.add("taken");
 };

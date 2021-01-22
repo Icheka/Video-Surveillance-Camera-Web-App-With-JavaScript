@@ -12,13 +12,15 @@ html, body {
     width: 100%;
     object-fit: cover;
 }
+
 #video-window, #camera-renderer, #camera_img {
     transform: scaleX(-1);
     filter: FlipH;
 }
+
 #shutter-control {
     width: 200px;
-    background-color: black;
+    background-color: yellow;
     color: white;
     font-size: 16px;
     border-radius: 30px;
@@ -30,6 +32,12 @@ html, body {
     bottom: 30px;
     left: calc(50% - 100px);
 }
+
+#shutter-control:hover, #shutter-control:focus {
+	box-shadow: none !important;
+	outline: none !important;
+}
+
 .taken{
     height: 100px!important;
     width: 100px!important;
