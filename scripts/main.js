@@ -7,7 +7,7 @@ const cameraRenderer = document.getElementById("camera_renderer");
 const shutterControl = document.getElementById("shutter-control");
 
 
-(function cameraStart() {
+(function startStreaming() {
     navigator.mediaDevices
         .getUserMedia(conf)
         .then(stream => {
@@ -18,10 +18,10 @@ const shutterControl = document.getElementById("shutter-control");
     });
 })();
 
-shutterControl.onclick = () => {
+shutterControl.onclick = function() {
     cameraRenderer.style.width = videoWindow.style.width;
     cameraRenderer.style.height = videoWindow.style.height;
-    cameraRenderer.getContext("2d").drawImage(cameraRenderer, 0, 0);
-    cameraImg.src = cameraSensor.toDataURL("image/webp");
+    cameraRenderer.getContext("2d").drawImage(videoWindow, 0, 0);
+    cameraImg.src = cameraRenderer.toDataURL("image/webp");
     cameraImg.classList.add("taken");
 }
