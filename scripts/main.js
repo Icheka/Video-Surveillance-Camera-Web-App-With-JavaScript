@@ -18,12 +18,11 @@ function cameraStart() {
     });
 }
 
-shutterControl.onclick = function() {
+shutterControl.addEventListener("click", e => {
     cameraRenderer.width = videoWindow.width;
     cameraRenderer.height = videoWindow.height;
     cameraRenderer.getContext("2d").drawImage(cameraRenderer, 0, 0);
     cameraImg.src = cameraSensor.toDataURL("image/webp");
     cameraImg.classList.add("taken");
-};
+});
 
-window.addEventListener("load", cameraStart, false);
